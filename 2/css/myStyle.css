@@ -1,0 +1,87 @@
+.clr{
+    clear: both;
+}
+#header #logoImg{
+    width: 150px;
+}
+#navbar ul{
+    list-style: none;
+    background-color: black;
+    padding: 10px;
+}
+#navbar li{
+    display: inline;
+    padding: 0 10px;
+}
+#navbar ul a{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+#carousel #carouselImg{
+    width: 100%;
+}
+#intro #title{
+    color: red;
+    font-weight: bold;
+}
+#intro #galary #left{
+    float: left;
+    width: 49%;
+}
+#intro #galary #right{
+    float: right;
+    width: 49%;
+}
+#intro #galary #left-item{
+    float: left;
+    width: 49%;
+}
+#intro #galary #right-item{
+    float: right;
+    width: 49%;
+}
+#intro #galary #left img{
+    width: 100%;
+}
+#intro #galary #right img{
+    width: 100%;
+}
+#best-saler h1{
+    text-align: center;
+}
+#best-saler .product-best-saler{
+    float: left;
+    width: 25%;
+}
+#best-saler .product-best-saler img{
+    width: 100%;
+}
+#best-saler .product-best-saler button{
+    background-color: red;
+    color: white;
+}
+#sale-off{
+    margin-top: 15px;
+    height: 250px;
+    background-image: url("../imgs/nature.jpg");
+    background-position: center;
+}
+#sale-off #sale-circle{
+    margin-left: 20%;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: crimson;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    opacity: 0.7;
+}
+footer{
+    margin-top: 15px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;;
+}
