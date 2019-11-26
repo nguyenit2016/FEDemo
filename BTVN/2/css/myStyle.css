@@ -1,87 +1,138 @@
+ul{
+    padding-left: 0px;
+}
 .clr{
     clear: both;
 }
-#header #logoImg{
-    width: 150px;
+.nav-active{
+    border-bottom: 2px solid red;
 }
-#navbar ul{
-    list-style: none;
-    background-color: black;
-    padding: 10px;
-}
-#navbar li{
-    display: inline;
-    padding: 0 10px;
-}
-#navbar ul a{
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-#carousel #carouselImg{
-    width: 100%;
-}
-#intro #title{
-    color: red;
+.title{
+    text-align: center;
+    font-size: 35px;
     font-weight: bold;
 }
-#intro #galary #left{
-    float: left;
-    width: 49%;
-}
-#intro #galary #right{
-    float: right;
-    width: 49%;
-}
-#intro #galary #left-item{
-    float: left;
-    width: 49%;
-}
-#intro #galary #right-item{
-    float: right;
-    width: 49%;
-}
-#intro #galary #left img{
-    width: 100%;
-}
-#intro #galary #right img{
-    width: 100%;
-}
-#best-saler h1{
+.img-line{
     text-align: center;
 }
-#best-saler .product-best-saler{
+#header #logo{
+    float: left;
+    width: 50%;
+}
+#header #slogan{
+    float: right;
+    text-align: right;
+    width: 50%;
+}
+#header #slogan img{
+    margin-right: 100px;
+}
+#nav ul{
+    
+}
+#nav ul li{
+    display: inline;
+    padding-right: 15px;
+}
+#nav ul li a{
+    text-decoration: none;
+    color: black;
+}
+#intro p{
+    text-align: center;
+}
+#carousel img{
+    width: 100%;
+}
+#produce .produce-item{
     float: left;
     width: 25%;
+    text-align: center;
 }
-#best-saler .product-best-saler img{
+#produce .produce-item div{
+    color: red;
+    font-size: 2ppx;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+#produce .produce-item img{
     width: 100%;
 }
-#best-saler .product-best-saler button{
-    background-color: red;
+#news-event #event-child{
+    height: 300px;
+}
+#news-event .key-event{
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+#news-event .key-event div{
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/tin_tuc_1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+#news-event .key-event span{
     color: white;
-}
-#sale-off{
-    margin-top: 15px;
-    height: 250px;
-    background-image: url("../imgs/nature.jpg");
-    background-position: center;
-}
-#sale-off #sale-circle{
-    margin-left: 20%;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background-color: crimson;
-    text-align: center;
-    padding: 10px;
-    color: white;
-    opacity: 0.7;
-}
-footer{
-    margin-top: 15px;
+    text-transform: uppercase;
+    bottom: 3px;
+    position: absolute;
     background-color: black;
+    opacity: 0.7;
+    width: 100%;
+    padding: 10px 0px;
+}
+#news-event .sub-event{
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+#news-event .sub-event .sub-event-item{
+    float: left;
+    width: 50%;
+    height: 50%;
+}
+#news-event .sub-event .sub-event-item span{
     color: white;
-    text-align: center;
-    padding: 10px;;
+    text-transform: uppercase;
+    bottom: 3px;
+    position: absolute;
+    background-color: black;
+    opacity: 0.7;
+    width: 100%;
+    padding: 10px 0px;
+}
+#news-event .sub-event #sub-event-item1 div{
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/tin_tuc_2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+#news-event .sub-event #sub-event-item2 div{
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/tin_tuc_3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+#news-event .sub-event #sub-event-item3 div{
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/tin_tuc_4.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+#news-event .sub-event #sub-event-item4 div{
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/tin_tuc_5.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
