@@ -1,0 +1,73 @@
+header, section, footer, aside, nav, main, article, figure{
+    display: block;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+html{
+    font-size: 16px;
+}
+*{
+    box-sizing: border-box;
+}
+.section-padding{
+    padding: 0 10%;
+}
+.active-menu{
+    color: #ff0e83;
+}
+header{
+    background-color: #4e2a84;
+    color: white;
+}
+header .headerContent{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+    margin: 0 auto;
+    text-transform: uppercase;
+}
+header .headerContent div{
+    font-size: 35px;
+    padding: 15px 0;
+}
+header nav{
+
+}
+header nav ul{
+    
+}
+header nav ul li{
+    display: inline;
+    padding: 10px;
+}
+header nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+.carousel{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 600px;
+    background-image: url("../images/b3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+.carousel div div{
+    font-size: 3rem;
+}
+.carousel button{
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    color: white;
+    background-color: #ff0e83;
+}
