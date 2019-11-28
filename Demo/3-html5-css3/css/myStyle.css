@@ -15,59 +15,109 @@ html{
 .section-padding{
     padding: 0 10%;
 }
-.active-menu{
-    color: #ff0e83;
-}
+/* HEADER CSS */
 header{
     background-color: #4e2a84;
-    color: white;
-}
-header .headerContent{
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    width: 70%;
-    margin: 0 auto;
-    text-transform: uppercase;
-}
-header .headerContent div{
-    font-size: 35px;
+    justify-content: center;
     padding: 15px 0;
 }
-header nav{
-
-}
-header nav ul{
-    
-}
-header nav ul li{
-    display: inline;
-    padding: 10px;
-}
-header nav ul li a{
-    text-decoration: none;
+.header__logo{
     color: white;
-    font-size: 1rem;
+    font-size: 2.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 10%;
 }
+.header__nav ul{
+    list-style: none;
+    margin: 0;
+}
+.header__nav ul li{
+    display: inline;
+}
+.header__nav ul li a{
+    color: white;
+    font-size: 0.8rem;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 0.7rem;
+}
+.header__nav ul li.active a{
+    color: #ff0e83;
+}
+/* END HEADER CSS */
+
+/* CAROUSEL CSS */
 .carousel{
-    text-align: center;
+    height: 35rem;
+    background: url("../images/b3.jpg") no-repeat center center;
+    background-size: cover;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    height: 600px;
-    background-image: url("../images/b3.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+}
+.carousel .carousel__content{
+    width: 100%;
+    text-align: center;
     color: white;
 }
-.carousel div div{
+.carousel .carousel__content h1{
     font-size: 3rem;
+    font-weight: 500;
+    word-spacing: 0.4rem;
+    margin-bottom: 0;
 }
-.carousel button{
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
+.btn-pink{
+    background-color: #ff0c82;
+    padding: 0.5rem 1rem;
+    border: 1px solid rgb(221, 221, 221);
     color: white;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    border-radius: 3px;
+}
+/* END CAROUSEL CSS */
+
+/* INTRO CSS */
+.intro{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.intro__item{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+.intro__item img{
+    max-width: 100%;
+    display: block;
+}
+.intro__tradition{
+    background-color: #4e2a84;
+}
+.intro__img-1{
+    grid-column: 2/span 2;
+}
+.intro__creativity{
     background-color: #ff0e83;
 }
+.intro__things{
+    grid-column: 1/span 2;
+    background-color: #ed6498;
+}
+.intro__img-2 img{
+    max-width: 100%;
+    display: block;
+}
+.intro__img-4{
+    grid-column: 3/span 2;
+}
+.intro__quality{
+    background-color: #836eaa;
+}
+.intro__cakes{
+    background-color: #4e2a84;
+}
+/* END INTRO CSS */
