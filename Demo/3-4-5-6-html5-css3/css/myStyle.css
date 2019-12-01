@@ -1,0 +1,294 @@
+header, section, footer, aside, nav, main, article, figure{
+    display: block;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+html{
+    font-size: 16px;
+}
+*{
+    box-sizing: border-box;
+}
+.section-padding{
+    padding: 0 10%;
+}
+/* HEADER CSS */
+header{
+    background-color: #4e2a84;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0;
+}
+.header__logo{
+    color: white;
+    font-size: 2.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 10%;
+}
+.header__nav ul{
+    list-style: none;
+    margin: 0;
+}
+.header__nav ul li{
+    display: inline;
+}
+.header__nav ul li a{
+    color: white;
+    font-size: 0.8rem;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 0.7rem;
+}
+.header__nav ul li.active a{
+    color: #ff0e83;
+}
+/* END HEADER CSS */
+
+/* CAROUSEL CSS */
+.carousel{
+    height: 35rem;
+    background: url("../images/b3.jpg") no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+.carousel .carousel__content{
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+.carousel .carousel__content h1{
+    font-size: 3rem;
+    font-weight: 500;
+    word-spacing: 0.4rem;
+    margin-bottom: 0;
+}
+.btn-pink{
+    background-color: #ff0c82;
+    padding: 0.7rem 1.2rem;
+    border: 1px solid rgb(221, 221, 221);
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.btn-pink:hover{
+    background-color: white;
+    border: 1px solid #ff0c82;
+    color: black;
+}
+/* END CAROUSEL CSS */
+
+/* INTRO CSS */
+.intro{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.intro__item{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+.intro__item img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.intro__tradition{
+    background-color: #4e2a84;
+}
+.intro__img-1{
+    grid-column: 2/span 2;
+}
+.intro__creativity{
+    background-color: #ff0e83;
+}
+.intro__things{
+    grid-column: 1/span 2;
+    background-color: #ed6498;
+}
+.intro__img-2 img{
+    max-width: 100%;
+    display: block;
+}
+.intro__img-4{
+    grid-column: 3/span 2;
+}
+.intro__quality{
+    background-color: #836eaa;
+}
+.intro__cakes{
+    background-color: #4e2a84;
+}
+/* END INTRO CSS */
+
+/* VIDEO CSS */
+.video .statistic{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.statistic__item{
+    text-align: center;
+}
+.statistic__item h1{
+    font-size: 1.5rem;
+    color: #4e2a84;
+}
+.statistic__item p{
+    font-size: 1rem;
+    font-weight: bold;
+}
+.video__content{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1.5rem;
+    margin-top: 30px;
+}
+.video__content__left video{
+    width: 100%;
+    height: 20.5rem;
+}
+.video__content__right iframe{
+    width: 100%;
+    height: 20.5rem;
+}
+/* END VIDEO CSS */
+
+/* OUR SERVICES CSS */
+.ourservices h1{
+    text-align: center;
+}
+.ourservices .ourservices__content{
+    display: flex;
+}
+.ourservices .ourservices__content__item{
+    text-align: center;
+}
+.ourservices .ourservices__content__item i{
+    line-height: 100px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #4e2a84;
+    border-radius: 50%;
+    color: #4e2a84;
+    transition: all 0.7s;
+}
+.ourservices .ourservices__content__item i:hover{
+    color: #f03fff;
+}
+/* END OUR SERVICES CSS */
+
+/* GALLERY CSS */
+.gallery{
+    margin-top: 30px;
+}
+.gallery .gallery__title{
+    text-align: center;
+}
+.gallery .gallery__content{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+}
+.gallery .gallery__g1{
+    grid-column: 1/span 2;
+}
+.gallery .gallery__g6{
+    grid-column: 3/span 2;
+}
+.gallery .gallery__content__item{
+    position: relative;
+}
+.gallery .gallery__content__item img{
+    width: 100%;
+    height: 450px;
+}
+.gallery .gallery__content__item__detail{
+    position: absolute;
+    bottom: 3px;
+    text-align: right;
+    width: 100%;
+    height: 450px;
+    color: white;
+    background: #3885a34d;
+    padding-right: 30px;
+}
+.gallery .gallery__content__item__detail p{
+    position: absolute;
+    bottom: 1rem;
+    right: 30px;
+    text-align: right;
+    color: white;
+    opacity: 0;
+}
+.gallery .gallery__content__item__detail h3{
+    transform: translateY(1rem);
+}
+.gallery .gallery__content__item__detail:hover h3{
+    transform: translateY(0rem);
+    transition: all 0.5s;
+}
+.gallery .gallery__content__item__detail:hover h3:after{
+    transform: translateY(0rem);
+    transition: all 0.5s;
+    opacity: 1;
+}
+.gallery .gallery__content__item__detail:hover p{
+    transform: translateY(-1rem);
+    transition: all 0.5s;
+    opacity: 1;
+}
+.gallery .gallery__content__item__detail h3::after{
+    content: "";
+    background-color: white;
+    height: 4px;
+    margin-top: 1rem;
+    display: block;
+    opacity: 0;
+}
+/* END GALLERY CSS */
+
+/* TEAM CSS */
+.team{
+    background: #4e2a84;
+    padding-top: 3rem;
+    margin-top: 4rem;
+}
+.team .team__content{
+    width: 90%;
+    margin: 0 auto;
+}
+.team .team__title{
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+}
+.team .team__content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+}
+.team .team_member{
+    position: relative;
+}
+.team .team_member img{
+    width: 100%;
+}
+.team .team_member .team_member_detail{
+    position: absolute;
+    bottom: 4px;
+    background-color: #ff0e83;
+    width: 100%;
+    color: white;
+    padding: 10px 0 10px 30px;
+}
+/* END TEAM CSS */
