@@ -1,0 +1,82 @@
+*{
+    font-size: 16px;
+}
+
+/* Header CSS */
+.header{
+    position: absolute;
+    top: 20px;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+}
+.header__detail i, .header__detail span{
+    font-size: 14px;
+}
+.header__navbar .nav-item .nav-link{
+    color: white;
+    font-size: 16px;
+}
+.header__navbar .navbar-nav{
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+.header__navbar .nav-item{
+    position: relative;
+}
+.header__navbar .nav-item::before{
+    content: '';
+    width: 0;
+    height: 3px;
+    background-image: linear-gradient(to right, #fbbd61, #ec7532);
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    transition: all 0.5s;
+}
+.header__navbar .nav-item.active:before, .header__navbar .nav-item:hover:before{
+    width: 100%;
+}
+/* End Header CSS */
+
+/* Carousel CSS */
+.carousel-item__caption{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-right: 25%;
+}
+.carousel-item__caption span{
+    color: #fbbd61;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+.carousel-item__trailer span{
+    width: 50px;
+    height: 50px;
+    border: 2px solid white;
+    line-height: 45px;
+}
+.btn-orange{
+    background: linear-gradient(to right, #fbbd61, #ec7532);
+    border-radius: 40px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    padding: 11px 30px;
+    cursor: pointer;
+}
+#myCarousel .carousel-indicators{
+    bottom: 50px;
+}
+#myCarousel .carousel-indicators li{
+    width: 11px;
+    height: 11px;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#myCarousel .carousel-indicators li.active{
+    background-color: white;
+}
+/* End Carousel CSS */
