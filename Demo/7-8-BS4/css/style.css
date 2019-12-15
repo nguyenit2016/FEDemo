@@ -1,6 +1,10 @@
 *{
     font-size: 16px;
 }
+.section{
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
 
 /* Header CSS */
 .header{
@@ -80,3 +84,72 @@
     background-color: white;
 }
 /* End Carousel CSS */
+
+/* Comming soon CSS */
+.comming-movie{
+    background-color: black;
+    color: white;
+}
+.comming__bg{
+    background: url('../img/slide-3.png') no-repeat center center;
+}
+.section-title{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+    font-size: 22px;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    padding-bottom: 15px;
+}
+.section-title::before{
+    background-image: linear-gradient(to right, #fbbd61, #ec7532);
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    height: 3px;
+    content: "";
+    width: 160px;
+}
+.comming__trailer .video:hover i{
+    transform: scale(0.9);
+}
+.comming__trailer i{
+    font-size: 40px;
+    line-height: 75px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+    text-align: center;
+    text-indent: 10px;
+    color: #fff;
+    border: 2px solid #ec7532;
+    border-radius: 50%;
+}
+.comming__list .slick-slide{
+    margin: 0 15px;
+    text-align: center;
+    opacity: 0.35;
+}
+.comming__list .slick-slide:hover{
+    opacity: 1;
+    transition: all 1s;
+}
+.comming__list .slick-slide img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.release-date{
+    font-size: 14px;
+    opacity: .5;
+    color: #fff;
+}
+/* Comming soon CSS */
