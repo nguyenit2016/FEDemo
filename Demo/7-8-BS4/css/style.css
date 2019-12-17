@@ -85,6 +85,84 @@
 }
 /* End Carousel CSS */
 
+/* New in CSS */
+.movie{
+    padding-top: 80px;
+}
+.movie__title{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+    font-size: 22px;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    padding-bottom: 15px;
+    color: #ec7532;
+}
+.movie__title::before{
+    content: '';
+    width: 120px;
+    height: 3px;
+    background-image: linear-gradient(to right, #fbbd61, #ec7532);
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+.movie__item{
+    position: relative;
+    overflow: hidden;
+}
+.movie__item img{
+    border-radius: 10px;
+}
+.movie__overlay{
+    position: absolute;
+    top: 0;
+    left: -400%;
+    transform: skewX(45deg);
+    width: 800px;
+    height: 100%;
+    background: linear-gradient(to bottom, #fbbd61, #ec7532);
+    transition: all 0.5s;
+}
+.movie__item:hover .movie__overlay{
+    left: -100%;
+}
+.movie__detail{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) scale(0.8);
+    left: 0;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.movie__item:hover .movie__detail{
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+}
+.movie__detail i{
+    width: 80px;
+    height: 80px;
+    font-size: 20px;
+    border-radius: 50%;
+    border: 2px solid white;
+    line-height: 80px;
+    cursor: pointer;
+}
+.movie__detail a{
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+.movie__detail span{
+    font-size: 16px;
+}
+.movie__name{
+    font-size: 18px;
+}
+.movie__star{
+    color: #fbbd61;
+}
+/* End New in CSS */
+
 /* Comming soon CSS */
 .comming-movie{
     background-color: black;
