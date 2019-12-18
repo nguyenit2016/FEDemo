@@ -1,0 +1,26 @@
+body{
+    @include color($colorWhite);
+}
+.header{
+    @include backgroundColor($colorGreen);
+    @include padding($padding50px, 0px, $padding50px, 0px);
+    @include textAlign($alignCenter);
+}
+.content{
+    @include height($height100px);
+    .main-content{
+        @include backgroundColor($colorRed);
+        @include padding($padding50px, 0px, $padding50px, 0px);
+        @include textAlign($alignCenter);
+    }
+    .sidebar{
+        @include backgroundColor($colorBlue);
+        @include padding($padding50px, 0px, $padding50px, 0px);
+        @include textAlign($alignCenter);
+    }
+}
+.footer{
+    @include backgroundColor($colorYellow);
+    @include padding($padding50px, 0px, $padding50px, 0px);
+    @include textAlign($alignCenter);
+}

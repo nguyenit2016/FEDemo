@@ -1,0 +1,16 @@
+@mixin backgroundColor($color) {
+    background-color: $color;
+}
+@mixin height($height) {
+    height: $height;
+}
+@mixin color($color) {
+    color: $color !important;
+}
+
+@mixin padding($top, $right, $bottom, $left) {
+    padding: $top $right $bottom $left;
+}
+@mixin textAlign($align) {
+    text-align: $align;
+}
