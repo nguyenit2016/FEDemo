@@ -34,6 +34,7 @@ function themNV() {
     console.log(mangNhanVien);
     hienThiNhanVien(mangNhanVien);
     luuLocalStorage();
+    $("#myModal").modal("hide");
 }
 
 function hienThiNhanVien(MangNhanVien) {
@@ -77,16 +78,8 @@ function layDataFromLocalStorage() {
 function xoaNhanVien(e) {
     var btnXoa = e.target;
     var maNV = btnXoa.getAttribute("data-id");
-    for (var i = 0; i < mangNhanVien.length; i++) {
-        if (mangNhanVien[i].maNV === maNV) {
-            mangNhanVien.splice(i, 1);
-        }
-    }
+    var nvIndex = mangNhanVien.findIndex(x => x.maNV === maNV);
+    mangNhanVien.splice(nvIndex, 1);
     luuLocalStorage();
     hienThiNhanVien(mangNhanVien);
 }
-
-var btnThemNV = document.getElementById("btnThemNV");
-btnThemNV.addEventListener('click', themNV);
-var btnGetLocalStorage = document.getElementById("btnGetLocalStorage");
-btnGetLocalStorage.addEventListener('click', layDataFromLocalStorage);

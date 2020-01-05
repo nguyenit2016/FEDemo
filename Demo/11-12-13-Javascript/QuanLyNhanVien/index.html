@@ -115,7 +115,7 @@
 							<div class="col-md-6 text-right">
 								<button class="btn btn-primary" id="btnThem" data-toggle="modal"
 									data-target="#myModal">Thêm nhân viên</button>
-								<button class="btn btn-info" id="btnGetLocalStorage" >Lấy từ local storage</button>
+								<button class="btn btn-info" onclick="layDataFromLocalStorage()" id="btnGetLocalStorage" >Lấy từ local storage</button>
 							</div>
 						</div>
 					</div>
@@ -269,7 +269,7 @@
 
 				<!-- Modal footer -->
 				<div class="modal-footer" id="modal-footer">
-					<button id="btnThemNV" type="button" class="btn btn-success">Thêm người dùng</button>
+					<button id="btnThemNV" onclick="themNV()" type="button" class="btn btn-success">Thêm người dùng</button>
 					<button id="btnCapNhat" type="button" class="btn btn-success">Cập nhật</button>
 					<button id="btnDong" type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
 				</div>
