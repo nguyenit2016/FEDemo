@@ -35,13 +35,28 @@ function themNV() {
     var ngaylam = document.getElementById("datepicker").value;
     var chucVu = document.getElementById("chucvu").value;
 
-    var nhanVien = new NhanVien(maNV, hoTen, email, matKhau, ngaylam, chucVu);
+    var validation = new Validation();
+    var isValid = true;
+    isValid &= validation.KiemTraRong("msnv", "tbMaNV", "Vui lòng nhập mã nhân viên");
 
-    mangNhanVien.push(nhanVien);
-    console.log(mangNhanVien);
-    hienThiNhanVien(mangNhanVien);
-    luuLocalStorage();
-    $("#myModal").modal("hide");
+    isValid &= validation.KiemTraRong("name", "tbTen", "Vui lòng chọn chức vụ") &&
+            validation.KiemTraWithRegExp("name", "tbTen", "Vui lòng nhập đúng họ tên", "FullName");
+
+    isValid &= validation.KiemTraRong("email", "tbEmail", "Vui lòng nhập email") &&
+            validation.KiemTraWithRegExp("email", "tbEmail", "Vui lòng nhập đúng email", "Email");
+
+    isValid &= validation.KiemTraRong("password", "tbMatKhau", "Vui lòng nhập mật khẩu") &&
+            validation.KiemTraWithRegExp("password", "tbMatKhau", "Vui lòng nhập đúng mật khẩu", "Password");
+
+    isValid &= validation.KiemTraDropdown("chucvu", "tbChucVu", "Vui lòng chọn chức vụ");
+
+    if(isValid){
+        var nhanVien = new NhanVien(maNV, hoTen, email, matKhau, ngaylam, chucVu);
+        mangNhanVien.push(nhanVien);
+        hienThiNhanVien(mangNhanVien);
+        luuLocalStorage();
+        $("#myModal").modal("hide");
+    }
 }
 
 function hienThiNhanVien(MangNhanVien) {
