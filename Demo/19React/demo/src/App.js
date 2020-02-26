@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import BaiTap2 from './components/bt2/index'
+import ExampleListKey from './list-key/exampleListKey'
 
 function App() {
   return (
     <div>
-      <BaiTap2 />
+      <ExampleListKey />
     </div>
   );
 }
