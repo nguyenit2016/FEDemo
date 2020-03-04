@@ -9,7 +9,8 @@ export default class Cart extends Component {
     this.state = {
       listProduct: data,
       productDetail: data[0],
-      gioHang: []
+      gioHang: [],
+      tongSoLuong: 0
     };
   }
 
@@ -18,59 +19,54 @@ export default class Cart extends Component {
   }
 
   handleAddToCart = (product) => {
-    let listGioHangTemp = [...this.state.gioHang];
-    let soLuong = 1;
-    listGioHangTemp.map((item, index) => {
-      if (item.maSP == product.maSP) {
-        soLuong = item.soLuong + 1;
-        listGioHangTemp.splice(index, 1);
-      }
-    });
-
-    const sanPham = {
-      maSP: product.maSP,
-      tenSP: product.tenSP,
-      hinhAnh: product.hinhAnh,
-      soLuong: soLuong,
-      giaBan: product.giaBan
-    };
-
-    let listGioHang = [...listGioHangTemp, sanPham]
-    this.setState({
-      gioHang: listGioHang
-    });
-  }
-  handleChangeQuantity = (maSP, isUp) => {
-    let giohang = [...this.state.gioHang];
-    let indexOfProduct = giohang.findIndex(x => x.maSP == maSP);
-    let product = giohang[indexOfProduct];
-    let soLuong = isUp ? (product.soLuong + 1) : (product.soLuong - 1)
-    giohang.splice(indexOfProduct, 1);
-    if (soLuong > 0) {
+    let giohangTemp = [...this.state.gioHang];
+    let indexOfProduct = giohangTemp.findIndex(x => x.maSP === product.maSP);
+    if (indexOfProduct >= 0) {
+      giohangTemp[indexOfProduct].soLuong += 1;
+    } else {
       const sanPham = {
         maSP: product.maSP,
         tenSP: product.tenSP,
         hinhAnh: product.hinhAnh,
-        soLuong: soLuong,
+        soLuong: 1,
         giaBan: product.giaBan
       };
-      this.setState({
-        gioHang: [...giohang, sanPham]
-      });
-    } else {
-      this.setState({
-        gioHang: [...giohang]
-      });
+      giohangTemp = [...giohangTemp, sanPham]
     }
+
+    this.setState({
+      gioHang: giohangTemp
+    });
+  }
+  handleChangeQuantity = (maSP, isIncrease) => {
+    let giohangTemp = [...this.state.gioHang];
+    let indexOfProduct = giohangTemp.findIndex(x => x.maSP === maSP);
+    let product = giohangTemp[indexOfProduct];
+    let soLuong = isIncrease ? (product.soLuong + 1) : (product.soLuong - 1)
+    giohangTemp[indexOfProduct].soLuong = soLuong;
+    if (soLuong == 0) {
+      giohangTemp.splice(indexOfProduct, 1);
+    }
+    this.setState({
+      gioHang: [...giohangTemp]
+    });
   }
 
   deleteProduct = (maSP) => {
     let giohang = [...this.state.gioHang];
-    let indexOfProduct = giohang.findIndex(x => x.maSP == maSP);
+    let indexOfProduct = giohang.findIndex(x => x.maSP === maSP);
     giohang.splice(indexOfProduct, 1);
     this.setState({
       gioHang: [...giohang]
     });
+  }
+
+  tongSoLuong = () => {
+    return (
+      this.state.gioHang.reduce((tongSoLuong, product) => {
+        return tongSoLuong += product.soLuong
+      }, 0)
+    );
   }
 
   render() {
@@ -84,7 +80,7 @@ export default class Cart extends Component {
             data-toggle="modal"
             data-target="#modelId"
           >
-            Giỏ hàng ({this.state.gioHang.length})
+            Giỏ hàng ({this.tongSoLuong()})
           </button>
         </div>
         <ListProduct

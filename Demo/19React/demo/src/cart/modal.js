@@ -2,17 +2,16 @@ import React, { Component } from "react";
 
 export default class Modal extends Component {
   renderHTML = () => {
-    debugger
     return this.props.gioHang.map(item => {
       return (
-        <tr ke={item.maSP}>
+        <tr key={item.maSP}>
           <td>{item.maSP}</td>
           <td>{item.tenSP}</td>
           <td>
             <img src={item.hinhAnh} width={50} alt="" />
           </td>
           <td>
-            <button onClick={()=>{this.props.handleChangeQuantity(item.maSP, false)}}>-</button>{item.soLuong}<button onClick={()=>{this.props.handleChangeQuantity(item.maSP, true)}}>+</button>
+            <button onClick={()=>{this.props.handleChangeQuantity(item.maSP, false)}}>-</button> {item.soLuong} <button onClick={()=>{this.props.handleChangeQuantity(item.maSP, true)}}>+</button>
           </td>
           <td>{item.giaBan}</td>
           <td>{item.giaBan * item.soLuong}</td>

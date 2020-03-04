@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import Cart from './cart'
+import Home from './user-manager/Home'
 
 function App() {
   return (
     <div>
-      <Cart />
+      <Home />
     </div>
   );
 }
