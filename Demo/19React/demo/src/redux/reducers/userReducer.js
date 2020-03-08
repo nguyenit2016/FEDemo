@@ -18,7 +18,7 @@ let initialState = {
     }
   ],
   userEdit: null,
-  keyword: ""
+  keyWord: ""
 };
 
 const actions = () => {
@@ -35,14 +35,39 @@ const actions = () => {
     state.userEdit = action.user;
   }
 
-  const other = (state, action) => {
-    // do something
+  const search = (state, action) => {
+    state.keyWord = action.keyWord;
+  }
+
+  const changeValue = (state, action) => {
+    // let name = action.target.name;
+    // let value = action.target.value;
+    //state.userEdit[name] = value;
+    //eval("state.userEdit." + name + " = '" + value + "'");
+  }
+
+  const submitUser = (state, action) => {
+    action.event.preventDefault();
+    // let user = state.userEdit;
+    // if (user.id) {
+    //   let userListTemp = state.userList;
+    //   let indexOfUser = userListTemp.findIndex(x => x.id == user.id);
+    //   if (indexOfUser != -1) {
+    //     userListTemp[indexOfUser] = user;
+    //     state.userList = [...userListTemp];
+    //     state.userEdit = user;
+    //   }
+    // } else {
+    //   state.userList = [...state.userList, user];
+    // }
   }
 
   return new Map([
     [{ type: 'DELETE' }, deleteUser],
     [{ type: 'GETUSER' }, getUser],
-    [{ type: 'OTHER' }, other]
+    [{ type: 'SEARCH' }, search],
+    [{ type: 'CHANGEVALUE' }, changeValue],
+    [{ type: 'SUBMITUSER' }, submitUser]
   ])
 }
 

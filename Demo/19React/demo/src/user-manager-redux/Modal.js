@@ -79,38 +79,38 @@ class Modal extends Component {
               </button>
             </div>
             <div className="modal-body">
-              <form onSubmit={this.submitUser}>
+              <form onSubmit={(event) => {this.props.submitUser(event)}}>
                 <div className="form-group">
                   <label>userName</label>
                   <input type="text" className="form-control" name="userName"
-                    onChange={this.handleOnChange}
+                    onChange={(event) => { this.props.changeValue(event.target) }}
                     value={userEdit?.userName}
                   />
                 </div>
                 <div className="form-group">
                   <label>Name</label>
                   <input type="text" className="form-control" name="name"
-                    onChange={this.handleOnChange}
+                    onChange={(event) => { this.props.changeValue(event.target) }}
                     value={userEdit?.name}
                   />
                 </div>
                 <div className="form-group">
                   <label>Email</label>
                   <input type="text" className="form-control" name="email"
-                    onChange={this.handleOnChange}
+                    onChange={(event) => { this.props.changeValue(event.target) }}
                     value={userEdit?.email}
                   />
                 </div>
                 <div className="form-group">
                   <label>Phone Number</label>
                   <input type="text" className="form-control" name="phoneNumber"
-                    onChange={this.handleOnChange}
+                    onChange={(event) => { this.props.changeValue(event.target) }}
                     value={userEdit?.phoneNumber}
                   />
                 </div>
                 <div className="form-group">
                   <label>Type</label>
-                  <select className="form-control" name="type" onChange={this.handleOnChange} value={userEdit?.type}>
+                  <select className="form-control" name="type" value={userEdit?.type} onChange={(event) => { this.props.changeValue(event.target) }}>
                     <option>USER</option>
                     <option>VIP</option>
                   </select>
@@ -133,4 +133,23 @@ const mapStateToProps = (state) => {
   });
 }
 
-export default connect(mapStateToProps, null) (Modal);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    changeValue: (target) => {
+      let action = {
+        type: 'CHANGEVALUE',
+        target: target
+      };
+      dispatch(action);
+    },
+    submitUser: (event) => {
+      let action = {
+        type: 'SUBMITUSER',
+        event: event
+      };
+      dispatch(action);
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps) (Modal);

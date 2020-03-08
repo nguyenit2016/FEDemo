@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Search from "./Search";
 import Users from "./Users";
 import Modal from "./Modal";
+
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -32,8 +33,8 @@ class Home extends Component {
   submitUser = (user) => {
     if (user.id) {
       let userListTemp = this.state.userList;
-      let indexOfUser = userListTemp.findIndex(x => x.id == user.id);
-      if (indexOfUser != -1) {
+      let indexOfUser = userListTemp.findIndex(x => x.id === user.id);
+      if (indexOfUser !== -1) {
         userListTemp[indexOfUser] = user;
         this.setState({ userList: [...userListTemp], userEdit: user })
       }
@@ -51,21 +52,16 @@ class Home extends Component {
     }
   }
 
-  search = (keyWord) => {
-    this.setState({ keyWord })
-  }
+  // search = (keyWord) => {
+  //   this.setState({ keyWord })
+  // }
 
-  render() {
-    let { userList, keyWord } = this.state;
-    let userListSearch = userList.filter((user) => {
-      return user.name.toLowerCase().includes(keyWord.toLowerCase());
-    })
-    
+  render() {   
     return (
       <div className="container">
         <h1 className="display-4 text-center my-3">User Management Redux</h1>
         <div className="d-flex justify-content-between align-items-center">
-          <Search search={this.search} />
+          <Search />
           <button
             className="btn btn-success"
             data-toggle="modal"
