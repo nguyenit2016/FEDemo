@@ -35,6 +35,13 @@ const mapDispatchToProps = (dispatch) => {
         userId: userId
       };
       dispatch(action);
+    },
+    getUserEdit: (user) => {
+      let action = {
+        type: 'GETUSER',
+        user: user
+      };
+      dispatch(action);
     }
   }
 }

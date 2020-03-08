@@ -6,7 +6,7 @@ class Users extends Component {
   renderHTML = () => {
     return (
       this.props.userList.map(user => {
-        return <UserItem key={user.id} user={user} getUserEdit={this.props.getUserEdit} />
+        return <UserItem key={user.id} user={user} />
       })
     );
   }

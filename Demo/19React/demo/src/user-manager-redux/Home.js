@@ -42,10 +42,6 @@ class Home extends Component {
     }
   }
 
-  getUserEdit = (user) => {
-    this.setState({ userEdit: user })
-  }
-
   deleteUser = (id) => {
     let { userList } = { ...this.state };
     let indexOfUser = userList.findIndex(x => x.id === id);
@@ -79,8 +75,8 @@ class Home extends Component {
             Add User
           </button>
         </div>
-        <Users getUserEdit={this.getUserEdit} />
-        <Modal submitUser={this.submitUser} userEdit={this.state.userEdit} />
+        <Users />
+        <Modal submitUser={this.submitUser} />
       </div>
     );
   }

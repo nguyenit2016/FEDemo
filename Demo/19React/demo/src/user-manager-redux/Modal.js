@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 class Modal extends Component {
   constructor(props) {
@@ -13,27 +14,28 @@ class Modal extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps && nextProps.userEdit) {
-      this.setState({
-        id: nextProps.userEdit.id,
-        userName: nextProps.userEdit.userName,
-        name: nextProps.userEdit.name,
-        email: nextProps.userEdit.email,
-        phoneNumber: nextProps.userEdit.phoneNumber,
-        type: nextProps.userEdit.type
-      });
-    } else {
-      this.setState({
-        id: '',
-        userName: '',
-        name: '',
-        email: '',
-        phoneNumber: '',
-        type: 'USER'
-      })
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   debugger
+  //   if (nextProps && nextProps.userEdit) {
+  //     this.setState({
+  //       id: nextProps.userEdit.id,
+  //       userName: nextProps.userEdit.userName,
+  //       name: nextProps.userEdit.name,
+  //       email: nextProps.userEdit.email,
+  //       phoneNumber: nextProps.userEdit.phoneNumber,
+  //       type: nextProps.userEdit.type
+  //     });
+  //   } else {
+  //     this.setState({
+  //       id: '',
+  //       userName: '',
+  //       name: '',
+  //       email: '',
+  //       phoneNumber: '',
+  //       type: 'USER'
+  //     })
+  //   }
+  // }
 
   submitUser = (event) => {
     event.preventDefault();
@@ -52,6 +54,8 @@ class Modal extends Component {
   }
 
   render() {
+    let userEdit = this.props.userEdit;
+    debugger
     return (
       <div
         className="modal fade"
@@ -64,7 +68,7 @@ class Modal extends Component {
         <div className="modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title">{this.props.userEdit ? 'EDIT' : 'ADD'} USER</h5>
+              <h5 className="modal-title">{userEdit ? 'EDIT' : 'ADD'} USER</h5>
               <button
                 type="button"
                 className="close"
@@ -80,33 +84,33 @@ class Modal extends Component {
                   <label>userName</label>
                   <input type="text" className="form-control" name="userName"
                     onChange={this.handleOnChange}
-                    value={this.state.userName}
+                    value={userEdit?.userName}
                   />
                 </div>
                 <div className="form-group">
                   <label>Name</label>
                   <input type="text" className="form-control" name="name"
                     onChange={this.handleOnChange}
-                    value={this.state.name}
+                    value={userEdit?.name}
                   />
                 </div>
                 <div className="form-group">
                   <label>Email</label>
                   <input type="text" className="form-control" name="email"
                     onChange={this.handleOnChange}
-                    value={this.state.email}
+                    value={userEdit?.email}
                   />
                 </div>
                 <div className="form-group">
                   <label>Phone Number</label>
                   <input type="text" className="form-control" name="phoneNumber"
                     onChange={this.handleOnChange}
-                    value={this.state.phoneNumber}
+                    value={userEdit?.phoneNumber}
                   />
                 </div>
                 <div className="form-group">
                   <label>Type</label>
-                  <select className="form-control" name="type" onChange={this.handleOnChange} value={this.state.type}>
+                  <select className="form-control" name="type" onChange={this.handleOnChange} value={userEdit?.type}>
                     <option>USER</option>
                     <option>VIP</option>
                   </select>
@@ -123,4 +127,10 @@ class Modal extends Component {
   }
 }
 
-export default Modal;
+const mapStateToProps = (state) => {
+  return ({
+    userEdit: state.userReducer.userEdit
+  });
+}
+
+export default connect(mapStateToProps, null) (Modal);
