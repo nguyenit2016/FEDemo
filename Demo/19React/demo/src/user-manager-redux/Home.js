@@ -67,7 +67,7 @@ class Home extends Component {
     
     return (
       <div className="container">
-        <h1 className="display-4 text-center my-3">User Management</h1>
+        <h1 className="display-4 text-center my-3">User Management Redux</h1>
         <div className="d-flex justify-content-between align-items-center">
           <Search search={this.search} />
           <button
@@ -79,7 +79,7 @@ class Home extends Component {
             Add User
           </button>
         </div>
-        <Users userList={userListSearch} deleteUser={this.deleteUser} getUserEdit={this.getUserEdit} />
+        <Users getUserEdit={this.getUserEdit} />
         <Modal submitUser={this.submitUser} userEdit={this.state.userEdit} />
       </div>
     );

@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import UserItem from "./UserItem";
+import { connect } from "react-redux";
 
 class Users extends Component {
   renderHTML = () => {
     return (
       this.props.userList.map(user => {
-        return <UserItem key={user.id} user={user} deleteUser={this.props.deleteUser} getUserEdit={this.props.getUserEdit} />
+        return <UserItem key={user.id} user={user} getUserEdit={this.props.getUserEdit} />
       })
     );
   }
@@ -32,4 +33,10 @@ class Users extends Component {
   }
 }
 
-export default Users;
+const mapStateToProps = (state) => {
+  return ({
+    userList: state.userReducer.userList
+  });
+}
+
+export default connect(mapStateToProps, null) (Users);

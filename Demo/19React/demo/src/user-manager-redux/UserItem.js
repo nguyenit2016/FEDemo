@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 class UserItem extends Component {
   render() {
@@ -26,4 +27,16 @@ class UserItem extends Component {
   }
 }
 
-export default UserItem;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deleteUser: (userId) => {
+      let action = {
+        type: 'DELETE',
+        userId: userId
+      };
+      dispatch(action);
+    }
+  }
+}
+
+export default connect(null, mapDispatchToProps)(UserItem);
