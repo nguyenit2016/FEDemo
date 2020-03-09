@@ -2,17 +2,17 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 class Modal extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      id: '',
-      userName: '',
-      name: '',
-      email: '',
-      phoneNumber: '',
-      type: 'USER'
-    }
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     id: '',
+  //     userName: '',
+  //     name: '',
+  //     email: '',
+  //     phoneNumber: '',
+  //     type: 'USER'
+  //   }
+  // }
 
   // componentWillReceiveProps(nextProps) {
   //   debugger
@@ -37,21 +37,21 @@ class Modal extends Component {
   //   }
   // }
 
-  submitUser = (event) => {
-    event.preventDefault();
-    this.props.submitUser(this.state);
-  }
+  // submitUser = (event) => {
+  //   event.preventDefault();
+  //   this.props.submitUser(this.state);
+  // }
 
-  handleOnChange = (event) => {
-    let name = event.target.name;
-    let value = event.target.value;
+  // handleOnChange = (event) => {
+  //   let name = event.target.name;
+  //   let value = event.target.value;
 
-    this.setState({
-      [name]: value
-    }, () => {
-      console.log(this.state);
-    });
-  }
+  //   this.setState({
+  //     [name]: value
+  //   }, () => {
+  //     console.log(this.state);
+  //   });
+  // }
 
   render() {
     let userEdit = this.props.userEdit;

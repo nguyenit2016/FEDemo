@@ -40,10 +40,9 @@ const actions = () => {
   }
 
   const changeValue = (state, action) => {
-    // let name = action.target.name;
-    // let value = action.target.value;
-    //state.userEdit[name] = value;
-    //eval("state.userEdit." + name + " = '" + value + "'");
+    let name = action.target.name;
+    let value = action.target.value;
+    state.userEdit[name] = value;
   }
 
   const submitUser = (state, action) => {
@@ -62,12 +61,17 @@ const actions = () => {
     // }
   }
 
+  const addUser = (state, action) => {
+    state.userEdit = null;
+  }
+
   return new Map([
     [{ type: 'DELETE' }, deleteUser],
     [{ type: 'GETUSER' }, getUser],
     [{ type: 'SEARCH' }, search],
     [{ type: 'CHANGEVALUE' }, changeValue],
-    [{ type: 'SUBMITUSER' }, submitUser]
+    [{ type: 'SUBMITUSER' }, submitUser],
+    [{ type: 'ADDUSER' }, addUser]
   ])
 }
 
