@@ -5,17 +5,17 @@ import { connect } from "react-redux";
 class Users extends Component {
   renderHTML = () => {
     let { userList, keyWord } = this.props;
-    let userListSearch = userList.filter((user) => {
+    let userListSearch = userList.filter(user => {
       return user.name.toLowerCase().includes(keyWord.toLowerCase());
     })
-    
+
     return (
       userListSearch.map(user => {
         return <UserItem key={user.id} user={user} />
       })
     );
   }
-  
+
   render() {
     return (
       <div>
@@ -45,4 +45,4 @@ const mapStateToProps = (state) => {
   });
 }
 
-export default connect(mapStateToProps, null) (Users);
+export default connect(mapStateToProps, null)(Users);

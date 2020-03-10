@@ -24,7 +24,7 @@ let initialState = {
 const actions = () => {
   const deleteUser = (state, action) => {
     let userList = [...state.userList];
-    let indexOfUser = userList.findIndex(x => x.id === action.userId);
+    let indexOfUser = userList.findIndex(u => u.id === action.userId);
     if (indexOfUser !== -1) {
       userList.splice(indexOfUser, 1);
       state.userList = userList;
@@ -42,27 +42,39 @@ const actions = () => {
   const changeValue = (state, action) => {
     let name = action.target.name;
     let value = action.target.value;
-    state.userEdit[name] = value;
+    let user = { ...state.userEdit };
+    if (user) {
+      user[name] = value;
+      state.userEdit = user;
+    }
   }
 
   const submitUser = (state, action) => {
     action.event.preventDefault();
-    // let user = state.userEdit;
-    // if (user.id) {
-    //   let userListTemp = state.userList;
-    //   let indexOfUser = userListTemp.findIndex(x => x.id == user.id);
-    //   if (indexOfUser != -1) {
-    //     userListTemp[indexOfUser] = user;
-    //     state.userList = [...userListTemp];
-    //     state.userEdit = user;
-    //   }
-    // } else {
-    //   state.userList = [...state.userList, user];
-    // }
+    let user = state.userEdit;
+    if (user.id) {
+      let userListTemp = state.userList;
+      let indexOfUser = userListTemp.findIndex(u => u.id === user.id);
+      if (indexOfUser !== -1) {
+        userListTemp[indexOfUser] = user;
+        state.userList = [...userListTemp];
+        state.userEdit = user;
+      }
+    } else {
+      user.id = Math.floor(Math.random() * 100);
+      state.userList = [...state.userList, user];
+    }
   }
 
   const addUser = (state, action) => {
-    state.userEdit = null;
+    state.userEdit = {
+      id: '',
+      userName: '',
+      name: '',
+      email: '',
+      phoneNumber: '',
+      type: 'USER'
+    };
   }
 
   return new Map([

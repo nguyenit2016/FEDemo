@@ -2,60 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 class Modal extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     id: '',
-  //     userName: '',
-  //     name: '',
-  //     email: '',
-  //     phoneNumber: '',
-  //     type: 'USER'
-  //   }
-  // }
-
-  // componentWillReceiveProps(nextProps) {
-  //   debugger
-  //   if (nextProps && nextProps.userEdit) {
-  //     this.setState({
-  //       id: nextProps.userEdit.id,
-  //       userName: nextProps.userEdit.userName,
-  //       name: nextProps.userEdit.name,
-  //       email: nextProps.userEdit.email,
-  //       phoneNumber: nextProps.userEdit.phoneNumber,
-  //       type: nextProps.userEdit.type
-  //     });
-  //   } else {
-  //     this.setState({
-  //       id: '',
-  //       userName: '',
-  //       name: '',
-  //       email: '',
-  //       phoneNumber: '',
-  //       type: 'USER'
-  //     })
-  //   }
-  // }
-
-  // submitUser = (event) => {
-  //   event.preventDefault();
-  //   this.props.submitUser(this.state);
-  // }
-
-  // handleOnChange = (event) => {
-  //   let name = event.target.name;
-  //   let value = event.target.value;
-
-  //   this.setState({
-  //     [name]: value
-  //   }, () => {
-  //     console.log(this.state);
-  //   });
-  // }
-
   render() {
     let userEdit = this.props.userEdit;
-    debugger
     return (
       <div
         className="modal fade"
@@ -79,7 +27,7 @@ class Modal extends Component {
               </button>
             </div>
             <div className="modal-body">
-              <form onSubmit={(event) => {this.props.submitUser(event)}}>
+              <form onSubmit={(event) => { this.props.submitUser(event) }}>
                 <div className="form-group">
                   <label>userName</label>
                   <input type="text" className="form-control" name="userName"
@@ -152,4 +100,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps) (Modal);
+export default connect(mapStateToProps, mapDispatchToProps)(Modal);
