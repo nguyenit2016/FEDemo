@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import * as action from './../redux/action';
 
 class Modal extends Component {
   render() {
@@ -16,7 +17,7 @@ class Modal extends Component {
         <div className="modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title">{userEdit ? 'EDIT' : 'ADD'} USER</h5>
+              <h5 className="modal-title">{userEdit.id ? 'EDIT' : 'ADD'} USER</h5>
               <button
                 type="button"
                 className="close"
@@ -84,18 +85,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     changeValue: (target) => {
-      let action = {
-        type: 'CHANGEVALUE',
-        target: target
-      };
-      dispatch(action);
+      dispatch(action.actChangeValue(target));
     },
     submitUser: (event) => {
-      let action = {
-        type: 'SUBMITUSER',
-        event: event
-      };
-      dispatch(action);
+      dispatch(action.actSubmitUser(event));
     }
   }
 }

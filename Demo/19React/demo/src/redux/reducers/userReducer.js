@@ -1,3 +1,5 @@
+import * as actionType from './../constants/ActionType'
+
 let initialState = {
   userList: [
     {
@@ -17,7 +19,14 @@ let initialState = {
       type: "VIP"
     }
   ],
-  userEdit: null,
+  userEdit: {
+    id: '',
+    userName: '',
+    name: '',
+    email: '',
+    phoneNumber: '',
+    type: 'USER'
+  },
   keyWord: ""
 };
 
@@ -31,7 +40,7 @@ const actions = () => {
     }
   }
 
-  const getUser = (state, action) => {
+  const getUserEdit = (state, action) => {
     state.userEdit = action.user;
   }
 
@@ -53,15 +62,15 @@ const actions = () => {
     action.event.preventDefault();
     let user = state.userEdit;
     if (user.id) {
-      let userListTemp = state.userList;
+      let userListTemp = [...state.userList];
       let indexOfUser = userListTemp.findIndex(u => u.id === user.id);
       if (indexOfUser !== -1) {
         userListTemp[indexOfUser] = user;
-        state.userList = [...userListTemp];
+        state.userList = userListTemp;
         state.userEdit = user;
       }
     } else {
-      user.id = Math.floor(Math.random() * 100);
+      user.id = Math.random();
       state.userList = [...state.userList, user];
     }
   }
@@ -78,12 +87,12 @@ const actions = () => {
   }
 
   return new Map([
-    [{ type: 'DELETE' }, deleteUser],
-    [{ type: 'GETUSER' }, getUser],
-    [{ type: 'SEARCH' }, search],
-    [{ type: 'CHANGEVALUE' }, changeValue],
-    [{ type: 'SUBMITUSER' }, submitUser],
-    [{ type: 'ADDUSER' }, addUser]
+    [{ type: actionType.DELETE }, deleteUser],
+    [{ type: actionType.GETUSEREDIT }, getUserEdit],
+    [{ type: actionType.SEARCH }, search],
+    [{ type: actionType.CHANGEVALUE }, changeValue],
+    [{ type: actionType.SUBMITUSER }, submitUser],
+    [{ type: actionType.ADDUSER }, addUser]
   ])
 }
 

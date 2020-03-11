@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import * as action from './../redux/action';
 
 class UserItem extends Component {
   render() {
@@ -30,18 +31,10 @@ class UserItem extends Component {
 const mapDispatchToProps = (dispatch) => {
   return {
     deleteUser: (userId) => {
-      let action = {
-        type: 'DELETE',
-        userId: userId
-      };
-      dispatch(action);
+      dispatch(action.actDelete(userId));
     },
     getUserEdit: (user) => {
-      let action = {
-        type: 'GETUSER',
-        user: user
-      };
-      dispatch(action);
+      dispatch(action.actGetUserEdit(user));
     }
   }
 }

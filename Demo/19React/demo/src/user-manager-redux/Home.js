@@ -3,6 +3,7 @@ import Search from "./Search";
 import Users from "./Users";
 import Modal from "./Modal";
 import { connect } from "react-redux";
+import * as action from './../redux/action';
 
 class Home extends Component {
   render() {
@@ -30,10 +31,7 @@ class Home extends Component {
 const mapDispatchToProps = (dispatch) => {
   return {
     addUser: () => {
-      let action = {
-        type: 'ADDUSER'
-      };
-      dispatch(action);
+      dispatch(action.actAddUser());
     }
   }
 }

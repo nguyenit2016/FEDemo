@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import * as action from './../redux/action';
 
 class Search extends Component {
   render() {
@@ -18,11 +19,7 @@ class Search extends Component {
 const mapDispatchToProps = (dispatch) => {
   return {
     search: (keyWord) => {
-      let action = {
-        type: 'SEARCH',
-        keyWord: keyWord
-      };
-      dispatch(action);
+      dispatch(action.actSearch(keyWord));
     }
   }
 }
